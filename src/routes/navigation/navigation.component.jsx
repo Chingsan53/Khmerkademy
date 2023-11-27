@@ -16,6 +16,18 @@ const Navigation = () => {
                     <Link className="nav-link" to='/shop'>
                         SHOP
                     </Link>
+                    <Link className="nav-link" to='/shop'>
+                        CATEGORY
+                    </Link>
+                    <Link className="nav-link" to='/shop'>
+                        FEATURED
+                    </Link>
+                    <Link className="nav-link" to='/shop'>
+                        POP! YOURSELF
+                    </Link>
+                    <Link className="nav-link" to='/shop'>
+                        GIFT GUIDE
+                    </Link>
                 </div>
             </div>
             <Outlet />
