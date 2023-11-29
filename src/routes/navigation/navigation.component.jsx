@@ -1,41 +1,58 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import { ReactComponent as FunkoLogo } from "../../assets/Funko.svg";
+import { signOutUser } from "../../components/utils/firebase/firebase.utils";
+import { UserContext } from "../../contexts/user.context";
 
 import "./navigation.style.scss";
 
 const Navigation = () => {
-  return (
-    <Fragment>
-      <div className="navigation">
-        <Link className="logo-container" to="/">
-          <FunkoLogo className="logo" />
-        </Link>
-        <div className="nav-links-container">
-          <Link className="nav-link" to="/shop">
-            SHOP
-          </Link>
-          <Link className="nav-link" to="/shop">
-            CATEGORY
-          </Link>
-          <Link className="nav-link" to="/shop">
-            FEATURED
-          </Link>
-          <Link className="nav-link" to="/shop">
-            POP! YOURSELF
-          </Link>
-          <Link className="nav-link" to="/shop">
-            GIFT GUIDE
-          </Link>
-          <Link className="nav-link" to="/auth">
-            SIGN IN
-          </Link>
-        </div>
-      </div>
-      <Outlet />
-    </Fragment>
-  );
+    const { currentUser, setCurrentUser } = useContext(UserContext);
+    console.log(currentUser);
+
+    const signOutHandler = async () => {
+        await signOutUser();
+        setCurrentUser(null);
+    };
+
+    return (
+        <Fragment>
+            <div className="navigation">
+                <Link className="logo-container" to="/">
+                    <FunkoLogo className="logo" />
+                </Link>
+                <div className="nav-links-container">
+                    <Link className="nav-link" to="/shop">
+                        SHOP
+                    </Link>
+                    <Link className="nav-link" to="/shop">
+                        CATEGORY
+                    </Link>
+                    <Link className="nav-link" to="/shop">
+                        FEATURED
+                    </Link>
+                    <Link className="nav-link" to="/shop">
+                        POP! YOURSELF
+                    </Link>
+                    <Link className="nav-link" to="/shop">
+                        GIFT GUIDE
+                    </Link>
+                    {currentUser ? (
+                        <span className='nav-link' onClick={signOutHandler}>
+                            {' '}
+                            SIGN OUT{' '}
+                        </span>
+                    ) : (
+                        <Link className='nav-link' to='/auth'>
+                            SIGN IN
+                        </Link>
+                    )}
+                </div>
+            </div>
+            <Outlet />
+        </Fragment>
+    );
 };
 
 export default Navigation;
