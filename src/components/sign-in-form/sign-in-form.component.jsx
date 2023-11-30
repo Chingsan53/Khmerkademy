@@ -31,13 +31,12 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthWithEmailAndPassword(email, password);
-      console.log(response);
+      await signInAuthWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/invalid-login-credentials")
         alert("incorrect login credentials");
-      console.log(error);
+      console.log('user sign in failed', error);
     }
   };
   const handleChange = (event) => {
@@ -46,7 +45,7 @@ const SignInForm = () => {
   };
 
   return (
-    <div>
+    <div className="sign-in-container">
       <h2>Already have an account?</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>

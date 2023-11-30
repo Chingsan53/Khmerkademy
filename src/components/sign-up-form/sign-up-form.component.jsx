@@ -19,16 +19,13 @@ const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword } = formFields;
 
-
-    console.log('hit');
-
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (password != confirmPassword) {
+        if (password !== confirmPassword) {
             alert("passwords do not match");
             return;
         }
@@ -43,8 +40,9 @@ const SignUpForm = () => {
         } catch (error) {
             if (error.code === "auth/email-already-in-use") {
                 alert("Cannot create user, email already in use");
+            } else {
+                console.log("User creation encountered an error", error);
             }
-            console.log("User creation encountered an error", error);
         }
     };
 
@@ -54,7 +52,7 @@ const SignUpForm = () => {
     };
 
     return (
-        <div>
+        <div className="sign-up-container">
             <h2>Don't have an account?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}>
@@ -94,7 +92,7 @@ const SignUpForm = () => {
                     value={confirmPassword}
                 />
 
-                <Button buttonType="">Sign Up</Button>
+                <Button type="submit">Sign Up</Button>
             </form>
         </div>
     );
