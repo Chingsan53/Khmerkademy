@@ -22,12 +22,12 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDc0yk4CzgVvwXgWx4pI-2joaZ-25D33KM",
-  authDomain: "figure-store-db.firebaseapp.com",
-  projectId: "figure-store-db",
-  storageBucket: "figure-store-db.appspot.com",
-  messagingSenderId: "388358353850",
-  appId: "1:388358353850:web:da43a3d2d69ef86cb12383",
+  apiKey: "AIzaSyAtJMmBbd5_QA4ZBc9dIYQWvkYKJ-DREXM",
+  authDomain: "khmerkademy.firebaseapp.com",
+  projectId: "khmerkademy",
+  storageBucket: "khmerkademy.appspot.com",
+  messagingSenderId: "774537557636",
+  appId: "1:774537557636:web:b1825768a1cfeded9c34d1",
 };
 
 // Initialize Firebase
@@ -62,6 +62,7 @@ export const addCollectionAndDocuments = async (
   console.log("done");
 };
 
+// Fetch Data from Firestore
 export const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, "categories");
   const q = query(collectionRef);
