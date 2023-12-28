@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 // import { getCategoriesAndDocuments } from "../components/utils/firebase/firebase.utils.js";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import "./home.styles.scss";
 
 const Home = () => {
@@ -9,28 +9,70 @@ const Home = () => {
       id: 1,
       title: "Hello",
       translation: "សួរស្តី",
+      pronunciation: "suostei",
     },
     {
       id: 2,
       title: "How are you?",
       translation: "តើអ្នកសុខសប្បាយទេ?",
+      pronunciation: "tae nak sokhasabbay te?",
     },
     {
       id: 3,
       title: "What is your name?",
-      translation: "តើអ្នកឈ្មោះអី្វ?",
+      translation: "តើ​អ្នក​មាន​ឈ្មោះ​អ្វី?",
+      pronunciation: "tae nak mean chhmoh avei?"
+
     },
     {
       id: 4,
       title: "How old are you?",
       translation: "តើអ្នកអាយុប៉ុន្មានហើយ?",
+      pronunciation: "tae nak ayou bonman hery?"
     },
     {
       id: 5,
       title: "See you again soon.",
-      translation: "ជួបគ្នាពេលក្រោយ",
+      translation: "ជួបគ្នាម្តងទៀតឆាប់ៗនេះ",
+      pronunciation: "chuobaknea mtong tiet chab chab  nih"
     },
   ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const showNext = () => {
+    if (currentIndex < categories.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const showPrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const currentCategory = categories[currentIndex];
+
+  return (
+    <div className="container">
+      <h1>New Phrases for Monday</h1>
+      <div className="box">
+        <div className="list-item">
+          <span className="title">{currentCategory.title}</span>
+          <span className="translation">{currentCategory.translation}</span>
+          <span className="pronunciation">{currentCategory.pronunciation}</span>
+        </div>
+      </div>
+      <button className="btn" onClick={showPrevious} disabled={currentIndex === 0}>Previous</button>
+      <button className="btn" onClick={showNext} disabled={currentIndex === categories.length - 1}>Next</button>
+      <Outlet />
+    </div>
+  );
+};
+
+export default Home;
+
+//Fetch data query (incorrect)
 
   //   const [categories, setCategories] = useState([]);
   //   useEffect(() => {
@@ -52,19 +94,3 @@ const Home = () => {
   //     fetchData();
   //   }, []);
 
-  return (
-    <div className="container">
-      <ul className="list">
-        {categories.map((category) => (
-          <li className="list-item" key={category.id}>
-            <span className="title">{category.title}</span>
-            <span className="translation">{category.translation}</span>
-          </li>
-        ))}
-      </ul>
-      <Outlet />
-    </div>
-  );
-};
-
-export default Home;

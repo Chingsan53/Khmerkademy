@@ -1,19 +1,50 @@
+// body {
+//   margin: 0;
+//   padding: 20px 40px;
+//   font-family: "Open Sans", sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+//     monospace;
+// }
+
+// a {
+//   text-decoration: none;
+//   color: black;
+// }
+
+// * {
+//   box-sizing: border-box;
+// }
+
 body {
   margin: 0;
   padding: 20px 40px;
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #D2E3C8; /* Beautiful gradient background */
+  color: rgb(16, 15, 15); /* Ensuring text is readable on a darker background */
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  background: #D2E3C8; /* Slight background for code blocks for readability */
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  //color: #ffdf00; /* A bright color for links to stand out */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+a:hover {
+  color: #4F6F52; /* Slightly darker color on hover */
 }
 
 * {

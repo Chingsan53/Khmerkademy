@@ -15,7 +15,7 @@ const Navigation = () => {
           <Link className="nav-link" to="/home">
             Daily Phrases
           </Link>
-          <Link className="nav-link" to="/shop">
+          <Link className="nav-link" to="/exercise">
             Exercises
           </Link>
           {currentUser ? (

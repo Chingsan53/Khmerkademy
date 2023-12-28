@@ -1,7 +1,47 @@
+// define color and style
+// Define your color variables
+$button-color: #4a90e2; // Example blue color
+$button-hover-color: darken($button-color, 10%);
+$button-focus-color: lighten($button-color, 10%);
+$text-color: #fff;
+$border-radius: 5px;
+$transition-duration: 0.3s;
+
+// Mixin for common button styling
+@mixin button-style {
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  transition: background-color $transition-duration, color $transition-duration;
+  border-radius: $border-radius;
+  color: $text-color;
+  background-color: $button-color;
+  text-decoration: none; // For link buttons
+
+  &:hover, &:focus {
+    background-color: $button-hover-color;
+    color: $text-color;
+  }
+
+  &:focus {
+    background-color: $button-focus-color;
+    outline: none; // Removes the default focus outline
+  }
+}
+
+
+
 .container {
   max-width: 600px;
   margin: auto;
   padding: 20px;
+
+  .btn {
+    @include button-style;
+  }
 }
 
 .list {
@@ -33,3 +73,5 @@
     color: #666;
   }
 }
+
+
