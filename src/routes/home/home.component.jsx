@@ -10,31 +10,36 @@ const Home = () => {
       title: "Hello",
       translation: "សួរស្តី",
       pronunciation: "suostei",
+      imgaeUrl: "",
     },
     {
       id: 2,
       title: "How are you?",
       translation: "តើអ្នកសុខសប្បាយទេ?",
       pronunciation: "tae nak sokhasabbay te?",
+      imgaeUrl: "",
     },
     {
       id: 3,
       title: "What is your name?",
       translation: "តើ​អ្នក​មាន​ឈ្មោះ​អ្វី?",
-      pronunciation: "tae nak mean chhmoh avei?"
+      pronunciation: "tae nak mean chhmoh avei?",
+      imgaeUrl: "",
 
     },
     {
       id: 4,
       title: "How old are you?",
       translation: "តើអ្នកអាយុប៉ុន្មានហើយ?",
-      pronunciation: "tae nak ayou bonman hery?"
+      pronunciation: "tae nak ayou bonman hery?",
+      imgaeUrl: "",
     },
     {
       id: 5,
       title: "See you again soon.",
       translation: "ជួបគ្នាម្តងទៀតឆាប់ៗនេះ",
-      pronunciation: "chuobaknea mtong tiet chab chab  nih"
+      pronunciation: "chuobaknea mtong tiet chab chab  nih",
+      imgaeUrl: "",
     },
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,6 +63,7 @@ const Home = () => {
       <h1>New Phrases for Monday</h1>
       <div className="box">
         <div className="list-item">
+          <img src={currentCategory.imgaeUrl} alt={currentCategory.title} className="category-image" />
           <span className="title">{currentCategory.title}</span>
           <span className="translation">{currentCategory.translation}</span>
           <span className="pronunciation">{currentCategory.pronunciation}</span>
