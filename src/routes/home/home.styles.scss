@@ -20,6 +20,7 @@ $transition-duration: 0.3s;
   color: $text-color;
   background-color: $button-color;
   text-decoration: none; // For link buttons
+  margin: 10px;
 
   &:hover, &:focus {
     background-color: $button-hover-color;
@@ -50,27 +51,60 @@ $transition-duration: 0.3s;
   margin: 0;
 }
 
+// .list-item {
+//   background-color: #f9f9f9; // Light background for the box
+//   border: 1px solid #ddd; // Border for the box
+//   border-radius: 8px; // Rounded corners for the box
+//   padding: 15px; // Padding inside the box
+//   margin-bottom: 10px; // Space between each box
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+
+//   &:last-child {
+//     margin-bottom: 0; // Remove bottom margin for the last item
+//   }
+
+//   .title {
+//     font-weight: bold;
+//   }
+
+//   .translation {
+//     font-style: italic;
+//     color: #666;
+//   }
+//   .category-image {
+//     max-width: 100%; /* Ensures the image is not wider than its container */
+//     height: auto; /* Maintains the aspect ratio of the image */
+//     object-fit: cover; /* Ensures the image covers the area, might crop if necessary */
+//     border-radius: 5px; /* Optional: Adds rounded corners to the image */
+//   }
+  
+// }
 .list-item {
-  background-color: #f9f9f9; // Light background for the box
+  background-color: #EEF5FF; // Light background for the box
   border: 1px solid #ddd; // Border for the box
   border-radius: 8px; // Rounded corners for the box
   padding: 15px; // Padding inside the box
   margin-bottom: 10px; // Space between each box
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column; // Stack children vertically
+  align-items: center; // Center items horizontally
 
   &:last-child {
     margin-bottom: 0; // Remove bottom margin for the last item
   }
 
-  .title {
-    font-weight: bold;
+  .title, .translation, .pronunciation {
+    margin-top: 10px; // Add space between elements
   }
 
-  .translation {
-    font-style: italic;
-    color: #666;
+  .category-image {
+    max-width: 100%; // Ensures the image is not wider than its container
+    height: auto; // Maintains the aspect ratio of the image
+    object-fit: cover; // Ensures the image covers the area, might crop if necessary
+    border-radius: 5px; // Optional: Adds rounded corners to the image
+    max-height: 200px; // Limit the height of the image
   }
 }
 

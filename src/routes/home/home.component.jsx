@@ -8,16 +8,16 @@ const Home = () => {
     {
       id: 1,
       title: "Hello",
-      translation: "សួរស្តី",
-      pronunciation: "suostei",
-      imgaeUrl: "",
+      translation: "សួស្តី",
+      pronunciation: "suo stei",
+      imgaeUrl: "./img/hello.jpeg",
     },
     {
       id: 2,
       title: "How are you?",
       translation: "តើអ្នកសុខសប្បាយទេ?",
-      pronunciation: "tae nak sokhasabbay te?",
-      imgaeUrl: "",
+      pronunciation: "tae nak sokh sabbay te?",
+      imgaeUrl: "./img/how-are-you.jpeg",
     },
     {
       id: 3,
@@ -63,7 +63,7 @@ const Home = () => {
       <h1>New Phrases for Monday</h1>
       <div className="box">
         <div className="list-item">
-          <img src={currentCategory.imgaeUrl} alt={currentCategory.title} className="category-image" />
+          <img src={currentCategory.imgaeUrl} alt={currentCategory.imgaeUrl} className="category-image" />
           <span className="title">{currentCategory.title}</span>
           <span className="translation">{currentCategory.translation}</span>
           <span className="pronunciation">{currentCategory.pronunciation}</span>
