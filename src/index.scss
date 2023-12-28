@@ -22,16 +22,16 @@
 
 body {
   margin: 0;
-  padding: 20px 40px;
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #F3F8FF; /* Beautiful gradient background */
+  background: #f3f8ff; /* Beautiful gradient background */
   color: rgb(16, 15, 15); /* Ensuring text is readable on a darker background */
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
   background: #607274; /* Slight background for code blocks for readability */
   padding: 2px 4px;
   border-radius: 4px;
@@ -44,9 +44,13 @@ a {
 }
 
 a:hover {
-  color: #4F6F52; /* Slightly darker color on hover */
+  color: #4f6f52; /* Slightly darker color on hover */
 }
 
 * {
   box-sizing: border-box;
+}
+
+#root {
+  margin-top: 70px;
 }
