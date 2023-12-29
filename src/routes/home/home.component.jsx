@@ -10,14 +10,14 @@ const Home = () => {
       title: "Hello",
       translation: "សួស្តី",
       pronunciation: "suo stei",
-      imgaeUrl: "./img/hello.jpeg",
+      imgaeUrl: "./img/blank.png",
     },
     {
       id: 2,
       title: "How are you?",
       translation: "តើអ្នកសុខសប្បាយទេ?",
       pronunciation: "tae nak sokh sabbay te?",
-      imgaeUrl: "./img/how-are-you.jpeg",
+      imgaeUrl: "./img/quiz.jpeg",
     },
     {
       id: 3,
