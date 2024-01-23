@@ -5,7 +5,6 @@ import { signOutUser } from "../../components/utils/firebase/firebase.utils";
 import { UserContext } from "../../contexts/user.context";
 
 import "./navigation.style.scss";
-
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
   return (
