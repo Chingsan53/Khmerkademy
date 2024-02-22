@@ -30,7 +30,7 @@ return (
                         src="/img/matching.avif"
                         alt="Quiz"
                     />
-                    <div className="card-title">Matching</div>
+                    <div className="card-title">Matching Pairs</div>
                 </Link>
             </div>
 
