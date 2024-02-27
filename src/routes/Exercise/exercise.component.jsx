@@ -22,7 +22,7 @@ return (
                         src="/img/blank.png"
                         alt="Quiz"
                     />
-                    <div className="card-title">Fill in the Blank</div>
+                    <div className="card-title">Fill in the Blanks</div>
                 </Link>
                 <Link className="card" to="/matching">
                 <img 
