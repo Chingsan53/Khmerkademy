@@ -6,7 +6,7 @@ const Exercise = () => {
 return (
     <Fragment>
         <div className="categories">
-            <h1>Exercises</h1>
+            <h1>Excercises</h1>
             <div className="categories-container">
                 <Link className="card" to="/multiple-choice">
                     <img 
